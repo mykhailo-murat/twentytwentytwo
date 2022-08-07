@@ -1,0 +1,35 @@
+.post-type-archive-speakers .main-content {
+  background: #E5E5E5;
+  display: flex;
+  margin-bottom: 10px;
+}
+.post-type-archive-speakers .main-content .sidebar {
+  flex: 0 0 30%;
+}
+.post-type-archive-speakers .main-content .sidebar .speakers-tags {
+  list-style: none;
+}
+.post-type-archive-speakers .main-content .sidebar .speakers-tags li {
+  cursor: pointer;
+}
+.post-type-archive-speakers .main-content .sidebar .speakers-tags .speakers-tag.active {
+  font-weight: bold;
+}
+.post-type-archive-speakers .main-content .speakers {
+  flex: 0 0 70%;
+  display: flex;
+}
+.post-type-archive-speakers .main-content .speakers .speakers__card {
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  flex: 0 0 250px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.post-type-archive-speakers .main-content .speakers .speakers__card .speakers__card-name {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=main.css.map */

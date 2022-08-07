@@ -1,0 +1,41 @@
+.post-type-archive-speakers {
+  .main-content {
+    background: #E5E5E5;
+    display: flex;
+    margin-bottom: 10px;
+
+    .sidebar {
+      flex: 0 0 30%;
+
+      .speakers-tags {
+        list-style: none;
+        li {
+          cursor: pointer;
+        }
+        .speakers-tag.active {
+          font-weight: bold;
+        }
+      }
+
+    }
+
+    .speakers {
+      flex: 0 0 70%;
+      display: flex;
+
+      .speakers__card {
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        flex: 0 0 250px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .speakers__card-name {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
