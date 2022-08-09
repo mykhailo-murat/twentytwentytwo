@@ -1,0 +1,30 @@
+.hero {
+  min-height: 790px;
+  padding: 60px;
+  margin-bottom: 100px;
+
+  .hero__text {
+    text-align: center;
+
+    p {
+      font-size: 18px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.sbs {
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+
+  .sbs__image {
+    flex: 0 0 45%;
+    height: 700px;
+  }
+  .sbs__text {
+    margin-left: 100px;
+    padding: 30px;
+  }
+}

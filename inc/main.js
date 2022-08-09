@@ -17,7 +17,7 @@ jQuery(document).ready(function ($) {
         console.log(tax);
         $.ajax({
             url: ajax_object.ajax_url,
-            data: { action: 'filter_ajax', tag: tag, tax:tax },
+            data: {action: 'filter_ajax', tag: tag, tax: tax},
             type: 'post',
             success: function (result) {
                 $('.speakers').html(result.data);
@@ -31,4 +31,22 @@ jQuery(document).ready(function ($) {
 
 
     $('.speakers-tag').on('click', ajaxFilter);
+
+    $('.dropdown-toggle').on('click', function () {
+        console.log('open drop');
+        $(this).next('.dropdown').slideToggle();
+
+    });
+    $(document).click(function (e) {
+        var target = e.target;
+        if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle'))
+//{ $('.dropdown').hide(); }
+        {
+            $('.dropdown').slideUp();
+        }
+    });
+
 });
+
+
+

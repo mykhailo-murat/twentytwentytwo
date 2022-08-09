@@ -7,11 +7,29 @@
     .sidebar {
       flex: 0 0 30%;
 
+      .tax{
+        list-style: none;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .dropdown {
+        z-index: 3;
+        display: none;
+        position: absolute;
+        top: 100%;
+        margin-top: 5px;
+        padding: 5px 5px 0 0;
+        background: #777;
+      }
+
       .speakers-tags {
         list-style: none;
+
         li {
           cursor: pointer;
         }
+
         .speakers-tag.active {
           font-weight: bold;
         }
@@ -22,18 +40,57 @@
     .speakers {
       flex: 0 0 70%;
       display: flex;
+      gap: 33px;
 
       .speakers__card {
+        padding: 35px;
         box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         flex: 0 0 250px;
+        height: 320px;
         background: #fff;
         display: flex;
         flex-direction: column;
-        text-align: center;
+        position: relative;
+
+        .speakers__card-flag {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          height: 15px;
+          width: 15px;
+          border-radius: 100%;
+          overflow: hidden;
+
+          .speakers__card-flag-in {
+            position: relative;
+            height: 15px;
+            width: 15px;
+            overflow: hidden;
+
+            img {
+              position: absolute;
+              margin: 0 !important;
+              padding: 0;
+              width: 140% !important;
+              height: 140% !important;
+              top: -20%;
+              left: -20%;
+              bottom: -20%;
+              right: -20%;
+              object-fit: cover;
+            }
+          }
+
+        }
 
         .speakers__card-name {
           text-decoration: none;
+        }
+
+        .speakers__card-image {
+          margin-bottom: 15px;
+          border-radius: 8px;
         }
       }
     }

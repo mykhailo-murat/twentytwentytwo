@@ -1,1 +1,100 @@
 @import "speakers-archive";
+@import "home";
+@import "header";
+
+$black: #323232;
+$white: #ffffff;
+$brand-color: #22BAC9;
+$navy: #065C9E;
+$font: 'Montserrat', sans-serif;
+
+$text-color: $black;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #E5E5E5;
+  font-family: $font;
+}
+
+.container {
+  max-width: 1530px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.button {
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid transparent;
+  font-size: 14px;
+  padding: 10px 90px;
+  color: $white;
+  background: $text-color;
+  font-weight: 600;
+}
+
+.button.hollow {
+  border-color: $text-color;
+  color: $text-color;
+  background: transparent ;
+}
+.link-arrow{
+  position: relative;
+  text-decoration: none;
+  padding-left: 50px;
+  &::before {
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    content: url("../../assets/images/Arrow.svg");
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.bg-cover {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.stretched-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.rel-content {
+  position: relative;
+  z-index: 2;
+}
+.of-cover,
+.stretched-img {
+  object-fit: cover;
+  font-family: 'object-fit: cover;';
+}
+.sup-title{
+  font-weight: 700;
+  letter-spacing: 5%;
+  text-transform: uppercase;
+  flex: 12;
+}
+h1 {
+  font-weight: 900;
+  font-family: $font;
+  font-size: 64px;
+}
+h2 {
+  font-weight: 900;
+  font-size: 36px;
+  font-family: $font;
+}
