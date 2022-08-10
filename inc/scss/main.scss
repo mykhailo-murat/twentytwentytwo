@@ -1,14 +1,8 @@
+@use 'vars' as v;
 @import "speakers-archive";
 @import "home";
 @import "header";
-
-$black: #323232;
-$white: #ffffff;
-$brand-color: #22BAC9;
-$navy: #065C9E;
-$font: 'Montserrat', sans-serif;
-
-$text-color: $black;
+@import "footer";
 
 * {
   box-sizing: border-box;
@@ -18,7 +12,7 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #E5E5E5;
-  font-family: $font;
+  font-family: v.$font;
 }
 
 .container {
@@ -33,20 +27,39 @@ html, body {
   border: 1px solid transparent;
   font-size: 14px;
   padding: 10px 90px;
-  color: $white;
-  background: $text-color;
+  color: v.$white;
+  background: v.$text-color;
   font-weight: 600;
+  transition: all 0.3s ease;
+  display: block;
+
+  &:hover, &:focus {
+    background: transparent;
+    color: v.$text-color;
+    border-color: v.$black;
+  }
 }
 
 .button.hollow {
-  border-color: $text-color;
-  color: $text-color;
-  background: transparent ;
+  border-color: v.$black;
+  color: v.$text-color;
+  background: transparent;
+
+  &:hover, &:focus {
+    background: v.$black;
+    color: v.$white;
+  }
 }
-.link-arrow{
+
+.link-arrow {
   position: relative;
   text-decoration: none;
   padding-left: 50px;
+
+  &:hover, &:focus {
+    opacity: .5;
+  }
+
   &::before {
     height: 36px;
     width: 36px;
@@ -77,24 +90,54 @@ html, body {
   position: relative;
   z-index: 2;
 }
+
 .of-cover,
 .stretched-img {
   object-fit: cover;
   font-family: 'object-fit: cover;';
 }
-.sup-title{
+
+.sup-title {
   font-weight: 700;
-  letter-spacing: 5%;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  flex: 12;
+  font-size: 12px!important;
 }
+
 h1 {
   font-weight: 900;
-  font-family: $font;
+  font-family: v.$font;
   font-size: 64px;
 }
+
 h2 {
   font-weight: 900;
   font-size: 36px;
-  font-family: $font;
+  font-family: v.$font;
+}
+
+/////////////////////////////////////////
+@media screen and (max-width: 376px) {
+
+  .container {
+    padding: 0;
+  }
+  .main-content{
+    margin-top: 135px;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .sup-title {
+    font-size: 14px!important;
+  }
+  .button {
+    text-align: center;
+    width: 100%;
+    height: 50px;
+  }
 }

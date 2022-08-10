@@ -1,9 +1,13 @@
 /* global ajax_object */
-console.log('1')
 jQuery(document).ready(function ($) {
     'use strict';
 
-    console.log('hello')
+    $('.burger').on('click', function () {
+        $(this).toggleClass('is-active');
+        $('.header__menu').toggleClass('is-active');
+        $('body').toggleClass('no-scroll');
+        console.log('open 3');
+    })
 
 
     // FILTER

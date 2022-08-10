@@ -29,15 +29,16 @@
 <header>
     <div class="container">
         <div class="header">
-            <div class="header__logo">
-                <?php
-                if (function_exists('the_custom_logo')) {
-                    the_custom_logo();
-                } ?>
-            </div>
+
+            <?php if (function_exists('the_custom_logo')): ?>
+                <div class="header__logo">
+                    <?php the_custom_logo(); ?>
+                </div>
+            <?php endif; ?>
+
             <?php if (has_nav_menu('header-menu')) : ?>
                 <nav class="header__menu">
-                    <?php wp_nav_menu(array('header-menu' => 'header-menu')); ?>
+                    <?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>
 
                     <?php if ($header_link = get_field('header_link', 'options')): ?>
                         <a class="header__link button hollow" target="<?php echo $header_link['target'] ?>"
@@ -48,6 +49,13 @@
             <div class="header__lang">
                 <a href="#"><?php _e('EN', 'twentytwentytwo') ?></a>
             </div>
+
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
         </div>
     </div>
 </header>
