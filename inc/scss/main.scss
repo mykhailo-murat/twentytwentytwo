@@ -31,7 +31,7 @@ html, body {
   background: v.$text-color;
   font-weight: 600;
   transition: all 0.3s ease;
-  display: block;
+
 
   &:hover, &:focus {
     background: transparent;
@@ -139,5 +139,6 @@ h2 {
     text-align: center;
     width: 100%;
     height: 50px;
+    display: block;
   }
 }
