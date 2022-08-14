@@ -104,16 +104,26 @@
   height: 700px;
 }
 .sbs .sbs__text {
-  margin-left: 100px;
+  margin-left: 6.5%;
   padding: 30px;
 }
 
-.no-scroll {
-  height: 100%;
-  overflow-y: hidden;
+@media screen and (max-width: 1025px) {
+  .sbs {
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+  }
+  .sbs .sbs__image {
+    flex: 0 0 50%;
+    height: 500px;
+  }
+  .sbs .sbs__text {
+    margin-left: 10px;
+    padding: 30px;
+  }
 }
-
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 640px) {
   .hero {
     padding: 20px;
     margin-bottom: 25px;
@@ -161,6 +171,7 @@
 .header .header__menu #menu-header .menu-item a {
   text-decoration: none;
   padding: 0 25px;
+  font-weight: 600;
 }
 .header .header__menu #menu-header .menu-item a:hover, .header .header__menu #menu-header .menu-item a:focus {
   opacity: 0.5;
@@ -187,7 +198,7 @@
   display: none;
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 1025px) {
   .header {
     position: fixed;
     top: 0;
@@ -327,7 +338,7 @@
   background: linear-gradient(90deg, #E6E9F0 0%, #EEF1F5 100%);
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 1025px) {
   .footer .footer__inner {
     padding: 40px 0 10px;
     flex-direction: column;
@@ -360,6 +371,11 @@ html, body {
   padding: 0;
   background-color: #E5E5E5;
   font-family: "Montserrat", sans-serif;
+}
+
+.no-scroll {
+  height: 100%;
+  overflow-y: hidden;
 }
 
 .container {
@@ -396,9 +412,12 @@ html, body {
 }
 
 .link-arrow {
+  text-transform: uppercase;
   position: relative;
   text-decoration: none;
   padding-left: 50px;
+  font-size: 14px;
+  font-weight: 600;
 }
 .link-arrow:hover, .link-arrow:focus {
   opacity: 0.5;
@@ -458,7 +477,7 @@ h2 {
   font-family: "Montserrat", sans-serif;
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 1025px) {
   .container {
     padding: 0;
   }

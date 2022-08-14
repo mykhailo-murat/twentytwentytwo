@@ -109,10 +109,9 @@ function filter_ajax()
             array(
                 'taxonomy' => $tax,
                 'field' => 'slug',
-                'terms' => $tag,
-            ),
-        )
-
+                'terms' => $tag
+            )
+        ),
     );
     $the_query = new WP_Query($posts);
 
@@ -169,35 +168,38 @@ add_action('wp_enqueue_scripts', 'my_update_jquery');
 
 register_nav_menus(
     array(
-        'header-menu' => __( 'Header Menu' ),
-        'footer-menu' => __( 'Footer Menu' )
+        'header-menu' => __('Header Menu'),
+        'footer-menu' => __('Footer Menu')
     )
 );
 
-add_theme_support( 'custom-logo' );
+add_theme_support('custom-logo');
 
-function custom_logo_setup() {
+function custom_logo_setup()
+{
     $defaults = array(
-        'height'               => 50,
-        'width'                => 100,
-        'flex-height'          => true,
-        'flex-width'           => true,
-        'header-text'          => array( 'site-title', 'site-description' ),
+        'height' => 50,
+        'width' => 100,
+        'flex-height' => true,
+        'flex-width' => true,
+        'header-text' => array('site-title', 'site-description'),
         'unlink-homepage-logo' => true,
     );
 
-    add_theme_support( 'custom-logo', $defaults );
+    add_theme_support('custom-logo', $defaults);
 }
 
-function add_file_types_to_uploads($file_types){
+function add_file_types_to_uploads($file_types)
+{
     $new_filetypes = array();
     $new_filetypes['svg'] = 'image/svg+xml';
-    $file_types = array_merge($file_types, $new_filetypes );
+    $file_types = array_merge($file_types, $new_filetypes);
     return $file_types;
 }
+
 add_filter('upload_mimes', 'add_file_types_to_uploads');
 
-if( function_exists('acf_add_options_page') ) {
+if (function_exists('acf_add_options_page')) {
     acf_add_options_page();
 }
 

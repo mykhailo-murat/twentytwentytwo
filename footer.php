@@ -23,7 +23,7 @@
 
             <?php if ($footer_link = get_field('footer_link', 'options')): ?>
                 <div class="footer__link">
-                    <a class="link-arrow " target="<?php echo $footer_link['target'] ?>"
+                    <a class="link-arrow" target="<?php echo $footer_link['target'] ?>"
                        href="<?php echo $footer_link['url'] ?>"><?php echo $footer_link['title'] ?></a>
                 </div>
             <?php endif; ?>

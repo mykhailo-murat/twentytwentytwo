@@ -25,18 +25,31 @@
   }
 
   .sbs__text {
-    margin-left: 100px;
+    margin-left: 6.5%;
     padding: 30px;
   }
 }
 
-.no-scroll {
-  height: 100%;
-  overflow-y: hidden;
+
+@media screen and (max-width: 1025px) {
+  .sbs {
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+
+    .sbs__image {
+      flex: 0 0 50%;
+      height: 500px;
+    }
+
+    .sbs__text {
+      margin-left: 10px;
+      padding: 30px;
+    }
+  }
 }
 
-
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 640px) {
   .hero {
     padding: 20px;
     margin-bottom: 25px;

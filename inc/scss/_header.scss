@@ -22,6 +22,7 @@
         a {
           text-decoration: none;
           padding: 0 25px;
+          font-weight: 600;
 
           &:hover, &:focus {
             opacity: .5;
@@ -57,7 +58,8 @@
   }
 }
 
-@media screen and (max-width: 376px) {
+
+@media screen and (max-width: 1025px) {
   .header {
     position: fixed;
     top: 0;
