@@ -9,22 +9,22 @@ jQuery(document).ready(function ($) {
         console.log('open 3');
     })
 
-
     // FILTER
     function ajaxFilter(e) {
         e.preventDefault();
-        $('.speakers-tag.active').removeClass('active');
-        console.log('active');
+        $(this).siblings().removeClass('active');
+
         $(this).toggleClass('active');
 
-         var tag = $(this).data('tag');
-         var tax = $(this).data('tax');
+        var position = $('#positions .active').data('tag');
+        var country = $('#countries .active').data('tag');
 
-        console.log(tag);
+        console.log(position);
+        console.log(country);
 
         $.ajax({
             url: ajax_object.ajax_url,
-            data: {action: 'filter_ajax', tag:tag, tax:tax, },
+            data: {action: 'filter_ajax', country: country, position: position},
             type: 'post',
             success: function (result) {
                 $('.speakers').html(result.data);

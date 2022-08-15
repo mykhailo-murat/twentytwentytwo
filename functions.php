@@ -99,20 +99,31 @@ function filter_ajax()
 {
     ob_start();
 
-    $tag = $_POST['tag'];
-    $tax = $_POST['tax'];
+    $position = $_POST['position'];
+    $country = $_POST['country'];
 
     $posts = array(
         'post_type' => array('Speakers'),
         'posts_per_page' => -1,
-        'tax_query' => array(
-            array(
-                'taxonomy' => $tax,
-                'field' => 'slug',
-                'terms' => $tag
-            )
-        ),
     );
+
+
+    if ($position) {
+        $posts['tax_query'][] = array(
+            'taxonomy' => 'positions',
+            'field' => 'slug',
+            'terms' => $position
+        );
+    };
+
+    if ($country) {
+        $posts['tax_query'][] = array(
+            'taxonomy' => 'countries',
+            'field' => 'slug',
+            'terms' => $country
+        );
+    }
+
     $the_query = new WP_Query($posts);
 
     if ($the_query->have_posts()) :

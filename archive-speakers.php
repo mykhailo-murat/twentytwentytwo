@@ -32,10 +32,12 @@ if ($query->have_posts()) { ?>
                                 'public' => true,
                             );
                             $tags = get_tags($args); ?>
-                            <ul class="speakers-tags dropdown">
+                            <ul class="speakers-tags dropdown" id="<?php echo $tax ?>">
                                 <?php foreach ($tags as $tag) : ?>
-                                    <li><h4 class="speakers-tag" data-tax="<?php echo $tax; ?>"
-                                            data-tag="<?php echo $tag->slug; ?>"><?php echo $tag->name; ?></h4></li>
+                                    <li class="speakers-tag" data-tax="<?php echo $tax; ?>"
+                                        data-tag="<?php echo $tag->slug; ?>">
+                                        <h4><?php echo $tag->name; ?></h4>
+                                    </li>
                                 <?php endforeach; ?>
                             </ul>
                         </li>
